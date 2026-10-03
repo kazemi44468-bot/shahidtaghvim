@@ -6,7 +6,7 @@
 html,body{font-family:Vazirmatn,sans-serif}
 body{font-family:Vazirmatn,sans-serif!important}
 .shared-container{width:min(1200px,calc(100% - 32px));margin-inline:auto}
-.shared-header{position:sticky;top:0;z-index:1000;background:rgba(250,248,243,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--shared-line)}
+.shared-header{position:sticky;top:0;z-index:1000;background:url('../images/bg_body21.gif') repeat;backdrop-filter:none;border-bottom:1px solid var(--shared-line)}
 .shared-header-inner{min-height:76px;display:flex;align-items:center;gap:24px}
 .shared-brand{display:flex;align-items:center;gap:11px;color:var(--shared-primary);text-decoration:none;flex-shrink:0}
 .shared-logo{width:48px;height:48px;object-fit:contain}
