@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="تقویم شهدا؛ تقویم زنده و هوشمند رویدادها، سالروز شهادت، تولد شهدا، عملیات‌ها و روایت‌های تاریخی">
+<meta name="theme-color" content="#2A9D8F">
+<title>تقویم شهدا</title>
+<link rel="icon" href="assets/images/logo.png">
+<link rel="stylesheet" href="assets/css/calendar.css"><link rel="stylesheet" href="assets/css/calendar-shell.css">
+</head>
+<body>
+<div id="calendarShellHeader"></div>
+<main>
+<section class="hero"><div class="wrap heroGrid"><div>
+<div class="ey">تقویم زنده و هوشمند شهدا</div><h1>تقویم شهدا</h1>
+<p class="lead">روایت زمان در تاریخ شهدا؛ جایی برای دیدن سالروز شهادت، تولد شهدا، عملیات‌ها، وقایع، یادواره‌ها و یادگارهای مرتبط با هر روز.</p>
+<div class="btns"><a class="btn main" href="#calendar">مشاهده تقویم</a><a class="btn" href="#search">جست‌وجوی رویداد</a></div>
+</div><div class="orbit" aria-hidden="true"><i class="o o1"></i><i class="o o2"></i><i class="o o3"></i><img src="assets/images/logo.png" alt=""></div></div></section>
+<section id="today" class="wrap today"><div class="box todayDateBox"><div class="k">امروز در تقویم شهدا</div><div class="date" id="todayDate">—</div><div class="muted" id="todaySummary">در حال بارگذاری رویدادهای امروز...</div></div>
+<div class="box"><div class="k">در چنین روزی</div><div class="events" id="todayEvents"></div></div></section>
+<section id="search" class="wrap box search"><input id="q" type="search" placeholder="شهید، شهر، عملیات، یگان، مناسبت، روایت یا تاریخ ۱۴۰۵/۰۷/۱۱..." aria-label="جست‌وجو"><select id="kind" aria-label="نوع رویداد"><option value="">همه انواع</option><option value="شهادت">شهادت</option><option value="تولد">تولد</option><option value="عملیات">عملیات</option><option value="واقعه">واقعه</option><option value="روایت">روایت</option><option value="مراسم">مراسم</option></select><button id="searchBtn">جست‌وجو</button></section>
+<section class="wrap box resultsBox" id="resultsBox" hidden><div class="resultsHead"><div><div class="k">نتایج جست‌وجو</div><strong id="resultsCount"></strong></div><button id="clearSearch" class="clearBtn">پاک‌کردن</button></div><div id="searchResults" class="resultList"></div></section>
+<section id="calendar" class="wrap box cal"><div class="tools"><div class="tabs"><button class="on" data-v="month">ماه</button><button data-v="week">هفته</button><button data-v="year">سال</button></div><div class="month"><button class="arrow" id="prev" aria-label="ماه قبل">‹</button><b id="mt"></b><button class="arrow" id="next" aria-label="ماه بعد">›</button></div><button class="todayBtn" id="goToday">امروز</button></div>
+<div id="monthView"><div class="grid" id="grid"></div><div id="dayDetails" class="dayDetails"></div></div>
+<div id="weekView" hidden><div class="weekGrid" id="weekGrid"></div><div id="weekDetails" class="dayDetails"></div></div>
+<div id="yearView" class="year" hidden></div></section>
+<section id="about" class="wrap about box"><div><div class="k">درباره تقویم</div><h2>تقویم شهدا، یک محصول مستقل</h2><p>این سامانه به‌صورت مستقل طراحی و توسعه می‌شود و مأموریت آن سازمان‌دهی لایه زمانی و رویدادهای مرتبط با شهداست. ارتباط با بانک جامع شهدا و شهیدپورتال فقط از طریق پیوندها و ارتباطات محتوایی انجام می‌شود و عملکرد این سایت به آن‌ها وابسته نیست.</p></div><div class="aboutMark"><span>زمان</span><b>یاد<br>ماندگار</b></div></section>
+</main>
+<div id="calendarShellFooter"></div>
+<script src="assets/js/calendar.js"></script><script src="assets/js/calendar-shell.js"></script>
+</body></html>
