@@ -1,10 +1,10 @@
-@font-face{font-family:VazirmatnLocal;src:url('../assets/fonts/Vazirmatn-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:VazirmatnLocal;src:url('../assets/fonts/Vazirmatn-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:VazirmatnLocal;src:url('../assets/fonts/Vazirmatn-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:VazirmatnLocal;src:url('../assets/fonts/Vazirmatn-ExtraBold.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:Vazirmatn;src:url('../fonts/Vazirmatn-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Vazirmatn;src:url('../fonts/Vazirmatn-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:Vazirmatn;src:url('../fonts/Vazirmatn-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:Vazirmatn;src:url('../fonts/Vazirmatn-ExtraBold.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}
 :root{--shared-primary:#0f2e24;--shared-primary-2:#1a4a3a;--shared-gold:#b8892b;--shared-bg:#faf8f3;--shared-line:#e6dfd0}
-html{font-family:VazirmatnLocal,sans-serif}
-body{font-family:VazirmatnLocal,sans-serif}
+html,body{font-family:Vazirmatn,sans-serif}
+body{font-family:Vazirmatn,sans-serif!important}
 .shared-container{width:min(1200px,calc(100% - 32px));margin-inline:auto}
 .shared-header{position:sticky;top:0;z-index:1000;background:rgba(250,248,243,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--shared-line)}
 .shared-header-inner{min-height:76px;display:flex;align-items:center;gap:24px}
