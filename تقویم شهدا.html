@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="تقویم شهدا — اطلس زمانی، تاریخی و انسانی شهدا، آزادگان و رویدادهای مرتبط" />
+<meta name="theme-color" content="#0f2e24" />
+<title>تقویم شهدا | اطلس زمانی و انسانی</title>
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f2e24'/><path d='M50 20 L60 45 L85 50 L60 55 L50 80 L40 55 L15 50 L40 45 Z' fill='%23d4af37'/></svg>" />
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" />
+
+<style>
+/* ============================================================
+   RESET & BASE
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* رنگ‌ها */
+  --c-bg: #faf8f3;
+  --c-bg-alt: #f2ede3;
+  --c-surface: #ffffff;
+  --c-surface-2: #f7f3ea;
+  --c-ink: #1a2420;
+  --c-ink-soft: #4a5651;
+  --c-ink-mute: #7a847f;
+  --c-line: #e6dfd0;
+  --c-line-soft: #efe9dd;
+
+  --c-primary: #0f2e24;
+  --c-primary-2: #1a4a3a;
+  --c-primary-3: #2a6a54;
+  --c-gold: #b8892b;
+  --c-gold-soft: #d4af37;
+  --c-gold-bg: #faf3e0;
+  --c-accent: #8b2f2f;
+
+  --c-night-bg: #0a1a15;
+  --c-night-surface: #11261e;
+  --c-night-ink: #e8e3d5;
+  --c-night-line: #1e3a2e;
+
+  /* تایپوگرافی */
+  --font: "Vazirmatn", "Tahoma", sans-serif;
+  --fs-xs: 0.78rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.35rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+  --fs-3xl: 3rem;
+  --fs-4xl: 4rem;
+
+  /* فاصله */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+
+  /* شکل */
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --shadow-sm: 0 1px 2px rgba(15,46,36,.06), 0 1px 3px rgba(15,46,36,.04);
+  --shadow: 0 4px 12px rgba(15,46,36,.06), 0 2px 4px rgba(15,46,36,.04);
+  --shadow-md: 0 12px 32px rgba(15,46,36,.08), 0 4px 8px rgba(15,46,36,.04);
+  --shadow-lg: 0 24px 60px rgba(15,46,36,.10), 0 8px 16px rgba(15,46,36,.06);
+
+  --container: 1200px;
+  --header-h: 76px;
+
+  --ease: cubic-bezier(.4, 0, .2, 1);
+}
+
+[data-theme="night"] {
+  --c-bg: var(--c-night-bg);
+  --c-bg-alt: #0d2019;
+  --c-surface: var(--c-night-surface);
+  --c-surface-2: #163328;
+  --c-ink: var(--c-night-ink);
+  --c-ink-soft: #b8c4bd;
+  --c-ink-mute: #7a8a82;
+  --c-line: var(--c-night-line);
+  --c-line-soft: #183027;
+  --c-gold-bg: #1a2f24;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  font-size: var(--fs-base);
+  line-height: 1.75;
+  color: var(--c-ink);
+  background: var(--c-bg);
+  font-feature-settings: "ss01", "ss02";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  transition: background-color .3s var(--ease), color .3s var(--ease);
+}
+
+/* اعداد فارسی */
+.num-fa { font-feature-settings: "ss01"; }
+
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; transition: color .2s var(--ease); }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+ul, ol { list-style: none; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--sp-5);
+}
+
+/* الگوی هندسی پس‌زمینه */
+.pattern-bg {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(184,137,43,.04) 0, transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(15,46,36,.04) 0, transparent 40%);
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 248, 243, .85);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--c-line-soft);
+  transition: background-color .3s var(--ease), border-color .3s var(--ease);
+}
+[data-theme="night"] .site-header { background: rgba(10, 26, 21, .85); }
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  height: var(--header-h);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--c-primary), var(--c-primary-3));
+  border-radius: 12px;
+  color: var(--c-gold-soft);
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-title {
+  display: block;
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--c-primary);
+  line-height: 1.2;
+  letter-spacing: -.01em;
+}
+[data-theme="night"] .brand-title { color: var(--c-gold-soft); }
+
+.brand-sub {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--c-ink-mute);
+  line-height: 1.2;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: var(--sp-1);
+  align-items: center;
+}
+
+.main-nav a {
+  display: block;
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--c-ink-soft);
+  border-radius: var(--radius-sm);
+  position: relative;
+  transition: color .2s var(--ease), background-color .2s var(--ease);
+}
+.main-nav a:hover { color: var(--c-primary); background: var(--c-surface-2); }
+[data-theme="night"] .main-nav a:hover { color: var(--c-gold-soft); background: var(--c-surface-2); }
+
+.main-nav a.is-active {
+  color: var(--c-primary);
+  font-weight: 600;
+}
+[data-theme="night"] .main-nav a.is-active { color: var(--c-gold-soft); }
+
+.main-nav a.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 2px; right: 12px; left: 12px;
+  height: 2px;
+  background: var(--c-gold);
+  border-radius: 2px;
+}
+
+.header-actions { display: flex; gap: var(--sp-2); align-items: center; }
+
+.btn-icon {
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  color: var(--c-ink-soft);
+  transition: all .2s var(--ease);
+}
+.btn-icon:hover {
+  background: var(--c-surface-2);
+  color: var(--c-primary);
+  transform: translateY(-1px);
+}
+[data-theme="night"] .btn-icon:hover { color: var(--c-gold-soft); }
+
+.menu-toggle { display: none; }
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  position: relative;
+  padding: var(--sp-9) 0 var(--sp-8);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 800px 400px at 80% 0%, rgba(184,137,43,.10), transparent 60%),
+    radial-gradient(ellipse 600px 300px at 10% 100%, rgba(15,46,36,.06), transparent 60%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  padding: var(--sp-1) var(--sp-4);
+  background: var(--c-gold-bg);
+  color: var(--c-gold);
+  border: 1px solid rgba(184,137,43,.25);
+  border-radius: 999px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: .02em;
+  margin-bottom: var(--sp-5);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, var(--fs-4xl));
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  color: var(--c-primary);
+  margin-bottom: var(--sp-5);
+}
+[data-theme="night"] .hero-title { color: var(--c-ink); }
+
+.hero-title .accent {
+  color: var(--c-gold);
+  position: relative;
+  display: inline-block;
+}
+.hero-title .accent::after {
+  content: "";
+  position: absolute;
+  bottom: .05em; right: 0; left: 0;
+  height: .35em;
+  background: var(--c-gold-bg);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.hero-lead {
+  font-size: var(--fs-md);
+  color: var(--c-ink-soft);
+  line-height: 1.9;
+  margin-bottom: var(--sp-7);
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.hero-search {
+  display: flex;
+  gap: var(--sp-2);
+  max-width: 620px;
+  margin: 0 auto var(--sp-6);
+  background: var(--c-surface);
+  padding: var(--sp-2);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--c-line-soft);
+}
+
+.hero-search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-base);
+  color: var(--c-ink);
+  outline: none;
+  font-family: inherit;
+}
+.hero-search input::placeholder { color: var(--c-ink-mute); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-5);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: var(--radius);
+  transition: all .2s var(--ease);
+  cursor: pointer;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--c-primary), var(--c-primary-2));
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(15,46,36,.25);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--c-primary-2), var(--c-primary-3));
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(15,46,36,.30);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--c-primary);
+  border: 1px solid var(--c-line);
+}
+.btn-ghost:hover {
+  background: var(--c-surface-2);
+  border-color: var(--c-gold);
+  color: var(--c-gold);
+}
+[data-theme="night"] .btn-ghost { color: var(--c-ink); }
+
+.hero-quick {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  color: var(--c-ink-soft);
+  transition: all .2s var(--ease);
+}
+.chip:hover {
+  border-color: var(--c-gold);
+  color: var(--c-gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.chip::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--c-gold);
+}
+
+/* ============================================================
+   SECTION
+============================================================ */
+.section {
+  padding: var(--sp-8) 0;
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+  flex-wrap: wrap;
+}
+
+.section-title {
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  color: var(--c-primary);
+  letter-spacing: -.01em;
+  position: relative;
+  padding-right: var(--sp-5);
+}
+[data-theme="night"] .section-title { color: var(--c-ink); }
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  right: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 4px; height: 60%;
+  background: linear-gradient(180deg, var(--c-gold), var(--c-gold-soft));
+  border-radius: 4px;
+}
+
+.section-sub {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-mute);
+  margin-top: var(--sp-1);
+}
+
+.link-more {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  transition: gap .2s var(--ease);
+}
+.link-more::after { content: "←"; transition: transform .2s var(--ease); }
+.link-more:hover { gap: var(--sp-3); }
+
+/* ============================================================
+   MARTYR OF DAY
+============================================================ */
+.martyr-of-day { background: var(--c-bg-alt); }
+
+.mod-card {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  background: var(--c-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--c-line-soft);
+}
+
+.mod-media {
+  position: relative;
+  background: linear-gradient(135deg, var(--c-primary), var(--c-primary-3));
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.mod-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: .92;
+}
+
+.mod-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(212,175,55,.15), transparent 60%),
+    linear-gradient(180deg, transparent 60%, rgba(15,46,36,.4));
+  pointer-events: none;
+}
+
+.mod-body {
+  padding: var(--sp-7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mod-date {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-gold);
+  background: var(--c-gold-bg);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: 999px;
+  margin-bottom: var(--sp-4);
+}
+
+.mod-name {
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  color: var(--c-primary);
+  margin-bottom: var(--sp-2);
+  letter-spacing: -.01em;
+}
+[data-theme="night"] .mod-name { color: var(--c-ink); }
+
+.mod-meta {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-mute);
+  margin-bottom: var(--sp-5);
+}
+
+.mod-quote {
+  position: relative;
+  padding: var(--sp-5) var(--sp-6);
+  background: var(--c-surface-2);
+  border-right: 3px solid var(--c-gold);
+  border-radius: var(--radius);
+  font-size: var(--fs-md);
+  line-height: 1.9;
+  color: var(--c-ink-soft);
+  margin-bottom: var(--sp-6);
+  font-style: normal;
+}
+
+.mod-actions { display: flex; gap: var(--sp-3); flex-wrap: wrap; }
+
+/* ============================================================
+   CALENDAR MINI
+============================================================ */
+.calendar-mini {
+  background: var(--c-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--c-line-soft);
+}
+
+.cal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-5);
+}
+
+.cal-month {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--c-primary);
+}
+[data-theme="night"] .cal-month { color: var(--c-ink); }
+
+.cal-nav-btn {
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  color: var(--c-ink-soft);
+  transition: all .2s var(--ease);
+}
+.cal-nav-btn:hover { background: var(--c-gold-bg); color: var(--c-gold); }
+
+.cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--sp-1);
+  margin-bottom: var(--sp-3);
+}
+
+.cal-weekdays span {
+  text-align: center;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-ink-mute);
+  padding: var(--sp-2) 0;
+}
+
+.cal-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--sp-1);
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  color: var(--c-ink-soft);
+  cursor: pointer;
+  transition: all .2s var(--ease);
+  position: relative;
+  font-feature-settings: "ss01";
+}
+
+.cal-day:hover {
+  background: var(--c-gold-bg);
+  color: var(--c-gold);
+}
+
+.cal-day.is-today {
+  background: var(--c-primary);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(15,46,36,.25);
+}
+.cal-day.is-today:hover { background: var(--c-primary-2); color: #fff; }
+
+.cal-day.is-empty { cursor: default; opacity: .3; }
+.cal-day.is-empty:hover { background: transparent; }
+
+.cal-day.has-event::after {
+  content: "";
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--c-gold);
+}
+.cal-day.is-today.has-event::after { background: var(--c-gold-soft); }
+
+.cal-day.is-holiday { color: var(--c-accent); }
+.cal-day.is-holiday.is-today { color: #fff; }
+
+/* ============================================================
+   EVENTS LIST
+============================================================ */
+.event-list {
+  display: grid;
+  gap: var(--sp-3);
+}
+
+.event-item {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: var(--sp-5);
+  align-items: center;
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line-soft);
+  border-radius: var(--radius);
+  transition: all .2s var(--ease);
+}
+
+.event-item:hover {
+  border-color: var(--c-gold);
+  box-shadow: var(--shadow);
+  transform: translateX(-4px);
+}
+
+.event-date {
+  text-align: center;
+  padding: var(--sp-2);
+  background: var(--c-gold-bg);
+  border-radius: var(--radius-sm);
+}
+
+.event-date .d {
+  display: block;
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  color: var(--c-gold);
+  line-height: 1;
+}
+
+.event-date .m {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--c-ink-mute);
+  margin-top: 4px;
+}
+
+.event-info h3 {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--c-ink);
+  margin-bottom: 4px;
+}
+
+.event-info p {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-mute);
+}
+
+.event-tag {
+  font-size: var(--fs-xs);
+  padding: var(--sp-1) var(--sp-3);
+  background: var(--c-surface-2);
+  color: var(--c-ink-soft);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   DISCOVER GRID
+============================================================ */
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--sp-4);
+}
+
+.discover-card {
+  position: relative;
+  padding: var(--sp-6);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line-soft);
+  border-radius: var(--radius-lg);
+  transition: all .25s var(--ease);
+  overflow: hidden;
+}
+
+.discover-card::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  width: 60px; height: 60px;
+  background: radial-gradient(circle at top right, var(--c-gold-bg), transparent 70%);
+  border-radius: 0 var(--radius-lg) 0 60px;
+  transition: all .3s var(--ease);
+}
+
+.discover-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--c-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.discover-card:hover::before {
+  width: 100%; height: 100%;
+  border-radius: 0;
+}
+
+.discover-card > * { position: relative; z-index: 1; }
+
+.discover-card h3 {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--c-primary);
+  margin-bottom: var(--sp-2);
+}
+[data-theme="night"] .discover-card h3 { color: var(--c-gold-soft); }
+
+.discover-card p {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-mute);
+  line-height: 1.8;
+}
+
+/* ============================================================
+   STATS
+============================================================ */
+.stats { background: var(--c-bg-alt); }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--sp-4);
+}
+
+.stats-grid li {
+  text-align: center;
+  padding: var(--sp-6) var(--sp-4);
+  background: var(--c-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--c-line-soft);
+  transition: all .2s var(--ease);
+}
+
+.stats-grid li:hover {
+  border-color: var(--c-gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.stats-grid strong {
+  display: block;
+  font-size: var(--fs-3xl);
+  font-weight: 800;
+  color: var(--c-gold);
+  line-height: 1;
+  margin-bottom: var(--sp-3);
+  font-feature-settings: "ss01";
+}
+
+.stats-grid span {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-mute);
+}
+
+.stats-note {
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--c-ink-mute);
+  margin-top: var(--sp-5);
+  font-style: italic;
+}
+
+/* ============================================================
+   CTA
+============================================================ */
+.cta-contribute { padding-bottom: var(--sp-9); }
+
+.cta-inner {
+  position: relative;
+  padding: var(--sp-9) var(--sp-7);
+  background:
+    linear-gradient(135deg, var(--c-primary), var(--c-primary-2));
+  border-radius: var(--radius-xl);
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.cta-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(212,175,55,.15), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(212,175,55,.10), transparent 50%);
+  pointer-events: none;
+}
+
+.cta-inner > * { position: relative; }
+
+.cta-title {
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  margin-bottom: var(--sp-4);
+  letter-spacing: -.01em;
+}
+
+.cta-text {
+  font-size: var(--fs-md);
+  opacity: .9;
+  max-width: 560px;
+  margin: 0 auto var(--sp-6);
+  line-height: 1.9;
+}
+
+.cta-actions {
+  display: flex;
+  gap: var(--sp-3);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-inner .btn-primary {
+  background: var(--c-gold);
+  box-shadow: 0 4px 14px rgba(184,137,43,.35);
+}
+.cta-inner .btn-primary:hover {
+  background: var(--c-gold-soft);
+  box-shadow: 0 8px 20px rgba(184,137,43,.45);
+}
+
+.cta-inner .btn-ghost {
+  color: #fff;
+  border-color: rgba(255,255,255,.3);
+}
+.cta-inner .btn-ghost:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.5);
+  color: #fff;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+.site-footer {
+  background: var(--c-primary);
+  color: rgba(255,255,255,.7);
+  padding: var(--sp-8) 0 var(--sp-5);
+  margin-top: var(--sp-7);
+}
+
+[data-theme="night"] .site-footer { background: #061410; }
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 3fr;
+  gap: var(--sp-7);
+  align-items: start;
+}
+
+.footer-brand .brand-logo {
+  margin-bottom: var(--sp-3);
+}
+
+.footer-title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: var(--sp-2);
+}
+
+.footer-desc {
+  font-size: var(--fs-sm);
+  line-height: 1.9;
+  max-width: 320px;
+}
+
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+}
+
+.footer-col h3 {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--c-gold-soft);
+  margin-bottom: var(--sp-3);
+  letter-spacing: .02em;
+}
+
+.footer-col ul { display: grid; gap: var(--sp-2); }
+
+.footer-col a {
+  font-size: var(--fs-sm);
+  color: rgba(255,255,255,.65);
+  transition: color .2s var(--ease);
+}
+.footer-col a:hover { color: var(--c-gold-soft); }
+
+.footer-bottom {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  padding-top: var(--sp-5);
+  margin-top: var(--sp-5);
+  border-top: 1px solid rgba(255,255,255,.1);
+  font-size: var(--fs-xs);
+  color: rgba(255,255,255,.5);
+}
+
+.footer-version { font-feature-settings: "ss01"; }
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 960px) {
+  .main-nav { display: none; }
+  .menu-toggle { display: grid; }
+
+  .mod-card { grid-template-columns: 1fr; }
+  .mod-media { min-height: 240px; }
+
+  .footer-inner { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --fs-4xl: 2.5rem;
+    --fs-3xl: 2rem;
+    --fs-2xl: 1.75rem;
+    --header-h: 64px;
+  }
+
+  .container { padding: 0 var(--sp-4); }
+
+  .hero { padding: var(--sp-7) 0 var(--sp-6); }
+
+  .hero-search {
+    flex-direction: column;
+    padding: var(--sp-3);
+  }
+
+  .hero-search .btn { width: 100%; }
+
+  .section { padding: var(--sp-6) 0; }
+
+  .mod-body { padding: var(--sp-5); }
+
+  .event-item {
+    grid-template-columns: 70px 1fr;
+    gap: var(--sp-3);
+    padding: var(--sp-3) var(--sp-4);
+  }
+
+  .event-tag { grid-column: 1 / -1; justify-self: start; }
+
+  .cta-inner { padding: var(--sp-7) var(--sp-5); }
+
+  .footer-nav { grid-template-columns: 1fr 1fr; }
+
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow,
+.hero-title,
+.hero-lead,
+.hero-search,
+.hero-quick {
+  animation: fadeUp .7s var(--ease) backwards;
+}
+.hero-eyebrow { animation-delay: .05s; }
+.hero-title   { animation-delay: .15s; }
+.hero-lead    { animation-delay: .25s; }
+.hero-search  { animation-delay: .35s; }
+.hero-quick   { animation-delay: .45s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+
+    <a href="index.html" class="brand" aria-label="تقویم شهدا — صفحه خانه">
+      <span class="brand-logo" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+          <path d="M12 3 L14 9 L20 10 L14 11 L12 17 L10 11 L4 10 L10 9 Z" fill="currentColor" stroke="none"/>
+          <circle cx="12" cy="10" r="1.5" fill="#0f2e24"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-title">تقویم شهدا</span>
+        <span class="brand-sub">اطلس زمانی و انسانی</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="ناوبری اصلی">
+      <ul>
+        <li><a href="index.html" class="is-active">خانه</a></li>
+        <li><a href="calendar.html">تقویم</a></li>
+        <li><a href="today.html">امروز</a></li>
+        <li><a href="martyrs.html">شهدا</a></li>
+        <li><a href="events.html">رویدادها</a></li>
+        <li><a href="places.html">مکان‌ها</a></li>
+        <li><a href="periods.html">دوره‌ها</a></li>
+        <li><a href="sources.html">منابع</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="search.html" class="btn-icon" aria-label="جست‌وجو">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </a>
+      <button class="btn-icon" id="themeToggle" aria-label="تغییر حالت شب و روز">
+        <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      <button class="btn-icon menu-toggle" aria-label="منو" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ============================================================
+     MAIN
+============================================================ -->
+<main id="main" role="main">
+
+  <!-- ====== HERO ====== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-inner">
+      <span class="hero-eyebrow">اطلس زمانی شهدا، آزادگان و رویدادها</span>
+
+      <h1 id="hero-title" class="hero-title">
+        هر روز، دروازه‌ای به <span class="accent">یک یاد</span>
+      </h1>
+
+      <p class="hero-lead">
+        از تاریخ اسلام تا ایران معاصر و جهان؛ رویدادها، شهدا، آزادگان و انسان‌های فداکار
+        را در یک تقویم زنده، مستند و قابل پژوهش ببینید.
+      </p>
+
+      <form class="hero-search" role="search" action="search.html" method="get">
+        <label for="hero-q" class="sr-only">جست‌وجو در تقویم شهدا</label>
+        <input id="hero-q" name="q" type="search" placeholder="نام شهید، رویداد، مکان یا موضوع..." autocomplete="off" />
+        <button type="submit" class="btn btn-primary">جست‌وجو</button>
+      </form>
+
+      <div class="hero-quick" role="navigation" aria-label="دسترسی سریع">
+        <a href="today.html" class="chip">امروز در تاریخ</a>
+        <a href="calendar.html" class="chip">تقویم ماهانه</a>
+        <a href="martyrs.html" class="chip">فهرست شهدا</a>
+        <a href="events.html" class="chip">رویدادها</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== شهید امروز ====== -->
+  <section class="section martyr-of-day" aria-labelledby="mod-title">
+    <div class="container">
+      <header class="section-head">
+        <div>
+          <h2 id="mod-title" class="section-title">شهید امروز</h2>
+          <p class="section-sub">هر روز، یاد یک انسان فداکار</p>
+        </div>
+        <a href="today.html" class="link-more">همه رویدادهای امروز</a>
+      </header>
+
+      <article class="mod-card">
+        <figure class="mod-media">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f2e24'/%3E%3Cstop offset='1' stop-color='%232a6a54'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23g)'/%3E%3Ccircle cx='200' cy='160' r='60' fill='%23d4af37' opacity='.15'/%3E%3Cpath d='M120 340 Q200 260 280 340' stroke='%23d4af37' stroke-width='2' fill='none' opacity='.3'/%3E%3C/svg%3E" alt="تصویر شهید" loading="lazy" />
+          <figcaption class="sr-only">تصویر شهید امروز</figcaption>
+        </figure>
+
+        <div class="mod-body">
+          <span class="mod-date">۳ خرداد ۱۴۰۵</span>
+          <h3 class="mod-name">نام شهید نمونه</h3>
+          <p class="mod-meta">متولد ۱۳۴۵ — شهادت ۱۳۶۵ — شلمچه</p>
+
+          <blockquote class="mod-quote">
+            «خدا را شکر که در راه او قدم برداشتم.»
+          </blockquote>
+
+          <div class="mod-actions">
+            <a href="martyr.html" class="btn btn-primary">مشاهده پرونده</a>
+            <a href="contribute.html" class="btn btn-ghost">افزودن خاطره</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ====== تقویم فشرده ====== -->
+  <section class="section" aria-labelledby="cal-title">
+    <div class="container">
+      <header class="section-head">
+        <div>
+          <h2 id="cal-title" class="section-title">تقویم این ماه</h2>
+          <p class="section-sub">نگاهی سریع به روزهای پیش‌رو</p>
+        </div>
+        <a href="calendar.html" class="link-more">تقویم کامل</a>
+      </header>
+
+      <div class="calendar-mini" id="calendarMini" aria-label="تقویم ماهانه فشرده">
+        <!-- توسط JS پر می‌شود -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== رویدادهای نزدیک ====== -->
+  <section class="section" aria-labelledby="up-title">
+    <div class="container">
+      <header class="section-head">
+        <div>
+          <h2 id="up-title" class="section-title">رویدادهای نزدیک</h2>
+          <p class="section-sub">سالگردها، یادواره‌ها و مناسبت‌های پیش‌رو</p>
+        </div>
+        <a href="events.html" class="link-more">همه رویدادها</a>
+      </header>
+
+      <ul class="event-list">
+        <li class="event-item">
+          <div class="event-date">
+            <span class="d">۳</span>
+            <span class="m">خرداد</span>
+          </div>
+          <div class="event-info">
+            <h3>سالگرد شهادت شهید نمونه</h3>
+            <p>شلمچه — عملیات کربلای ۵</p>
+          </div>
+          <span class="event-tag">سالگرد</span>
+        </li>
+
+        <li class="event-item">
+          <div class="event-date">
+            <span class="d">۱۰</span>
+            <span class="m">خرداد</span>
+          </div>
+          <div class="event-info">
+            <h3>یادواره شهدای استان</h3>
+            <p>مراسم سالانه در مرکز استان</p>
+          </div>
+          <span class="event-tag">یادواره</span>
+        </li>
+
+        <li class="event-item">
+          <div class="event-date">
+            <span class="d">۲۱</span>
+            <span class="m">خرداد</span>
+          </div>
+          <div class="event-info">
+            <h3>سالگرد عملیات نمونه</h3>
+            <p>منطقه عملیاتی — با حضور خانواده‌ها</p>
+          </div>
+          <span class="event-tag">عملیات</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ====== مسیرهای کشف ====== -->
+  <section class="section" aria-labelledby="disc-title">
+    <div class="container">
+      <header class="section-head">
+        <div>
+          <h2 id="disc-title" class="section-title">مسیرهای کشف</h2>
+          <p class="section-sub">از کجا شروع کنیم؟</p>
+        </div>
+      </header>
+
+      <div class="discover-grid">
+        <a href="martyrs.html" class="discover-card">
+          <h3>شهدا</h3>
+          <p>پرونده اشخاص، زندگی‌نامه، روایت و رسانه</p>
+        </a>
+        <a href="events.html" class="discover-card">
+          <h3>رویدادها</h3>
+          <p>شهادت، عملیات، جنگ، قیام، یادمان و سالگرد</p>
+        </a>
+        <a href="places.html" class="discover-card">
+          <h3>مکان‌ها</h3>
+          <p>کشور، شهر، جبهه، مزار و یادمان</p>
+        </a>
+        <a href="periods.html" class="discover-card">
+          <h3>دوره‌ها</h3>
+          <p>دوره اسلامی، تاریخ ایران، جنگ‌ها و انقلاب‌ها</p>
+        </a>
+        <a href="sources.html" class="discover-card">
+          <h3>منابع و اسناد</h3>
+          <p>کتاب، سند، آرشیو، مصاحبه و رسانه</p>
+        </a>
+        <a href="contribute.html" class="discover-card">
+          <h3>همکاری</h3>
+          <p>ثبت خاطره، سند، اصلاح و پیشنهاد ارتباط</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== آمار ====== -->
+  <section class="section stats" aria-labelledby="stats-title">
+    <div class="container">
+      <h2 id="stats-title" class="sr-only">آمار پروژه</h2>
+
+      <ul class="stats-grid">
+        <li>
+          <strong class="num-fa" data-count="1240">۰</strong>
+          <span>شخص ثبت‌شده</span>
+        </li>
+        <li>
+          <strong class="num-fa" data-count="3480">۰</strong>
+          <span>رویداد</span>
+        </li>
+        <li>
+          <strong class="num-fa" data-count="560">۰</strong>
+          <span>مکان</span>
+        </li>
+        <li>
+          <strong class="num-fa" data-count="2100">۰</strong>
+          <span>منبع</span>
+        </li>
+      </ul>
+
+      <p class="stats-note">
+        این آمار به‌صورت تدریجی و با ثبت منابع معتبر رشد می‌کند.
+      </p>
+    </div>
+  </section>
+
+  <!-- ====== CTA ====== -->
+  <section class="section cta-contribute" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-inner">
+        <h2 id="cta-title" class="cta-title">در تکمیل این اطلس سهیم شوید</h2>
+        <p class="cta-text">
+          خاطره، سند، تصویر یا اطلاعات اصلاحی دارید؟ با ثبت منبع، در ساخت این حافظه جمعی مشارکت کنید.
+        </p>
+        <div class="cta-actions">
+          <a href="contribute.html" class="btn btn-primary">شروع همکاری</a>
+          <a href="about.html" class="btn btn-ghost">درباره پروژه</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+      <span class="brand-logo" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+          <path d="M12 3 L14 9 L20 10 L14 11 L12 17 L10 11 L4 10 L10 9 Z" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <p class="footer-title">تقویم شهدا</p>
+      <p class="footer-desc">
+        اطلس زمانی، تاریخی و انسانی شهدا، آزادگان و رویدادهای مرتبط — از تاریخ اسلام تا امروز و آینده.
+      </p>
+    </div>
+
+    <nav class="footer-nav" aria-label="ناوبری پاصفحه">
+      <div class="footer-col">
+        <h3>کشف</h3>
+        <ul>
+          <li><a href="calendar.html">تقویم</a></li>
+          <li><a href="today.html">امروز</a></li>
+          <li><a href="martyrs.html">شهدا</a></li>
+          <li><a href="events.html">رویدادها</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>دانش</h3>
+        <ul>
+          <li><a href="places.html">مکان‌ها</a></li>
+          <li><a href="periods.html">دوره‌ها</a></li>
+          <li><a href="sources.html">منابع</a></li>
+          <li><a href="search.html">جست‌وجو</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>پروژه</h3>
+        <ul>
+          <li><a href="about.html">درباره</a></li>
+          <li><a href="contribute.html">همکاری</a></li>
+          <li><a href="contact.html">تماس</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="footer-bottom">
+      <p>© تقویم شهدا — محصولی مستقل در اکوسیستم فرهنگی.</p>
+      <p class="footer-version">نسخه طرح: ۱۴۰۵/۰۷/۱۱ — نسخه ۴</p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+(function() {
+  'use strict';
+
+  // ===== ابزار اعداد فارسی =====
+  function toFa(n) {
+    return String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+  }
+
+  // ===== تبدیل تاریخ میلادی به شمسی =====
+  function toJalali(gy, gm, gd) {
+    const g_d_m = [0,31,59,90,120,151,181,212,243,273,304,334];
+    let jy = (gy <= 1600) ? 0 : 979;
+    gy -= (gy <= 1600) ? 621 : 1600;
+    const gy2 = (gm > 2) ? (gy + 1) : gy;
+    let days = (365 * gy) + Math.floor((gy2 + 3) / 4) - Math.floor((gy2 + 99) / 100)
+             + Math.floor((gy2 + 399) / 400) - 80 + gd + g_d_m[gm - 1];
+    jy += 33 * Math.floor(days / 12053);
+    days %= 12053;
+    jy += 4 * Math.floor(days / 1461);
+    days %= 1461;
+    if (days > 365) {
+      jy += Math.floor((days - 1) / 365);
+      days = (days - 1) % 365;
+    }
+    const jm = (days < 186) ? 1 + Math.floor(days / 31) : 7 + Math.floor((days - 186) / 30);
+    const jd = 1 + ((days < 186) ? (days % 31) : ((days - 186) % 30));
+    return [jy, jm, jd];
+  }
+
+  const MONTHS_FA = ['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
+  const WEEKDAYS_FA = ['شنبه','یک‌شنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنج‌شنبه','جمعه'];
+
+  // ===== تاریخ امروز به شمسی =====
+  const now = new Date();
+  const [jy, jm, jd] = toJalali(now.getFullYear(), now.getMonth() + 1, now.getDate());
+
+  // ===== محاسبه اولین روز ماه =====
+  function jalaliToGregorian(jy, jm, jd) {
+    let gy = (jy <= 979) ? 621 : 1600;
+    jy -= (jy <= 979) ? 0 : 979;
+    let days = (365 * jy) + (Math.floor(jy / 33) * 8) + Math.floor(((jy % 33) + 3) / 4) + 78 + jd
+             + ((jm < 7) ? (jm - 1) * 31 : ((jm - 7) * 30) + 186);
+    gy += 400 * Math.floor(days / 146097);
+    days %= 146097;
+    if (days > 36524) {
+      gy += 100 * Math.floor(--days / 36524);
+      days %= 36524;
+      if (days >= 365) days++;
+    }
+    gy += 4 * Math.floor(days / 1461);
+    days %= 1461;
+    if (days > 365) {
+      gy += Math.floor((days - 1) / 365);
+      days = (days - 1) % 365;
+    }
+    let gd = days + 1;
+    const sal_a = [0,31,((gy % 4 === 0 && gy % 100 !== 0) || (gy % 400 === 0)) ? 29 : 28,31,30,31,30,31,31,30,31,30,31];
+    let gm;
+    for (gm = 0; gm < 13 && gd > sal_a[gm]; gm++) gd -= sal_a[gm];
+    return [gy, gm, gd];
+  }
+
+  // ===== شماره روز هفته (۰=شنبه) =====
+  function getJalaliWeekday(jy, jm, jd) {
+    const [gy, gm, gd] = jalaliToGregorian(jy, jm, jd);
+    const d = new Date(gy, gm - 1, gd);
+    // JS: 0=Sunday, 6=Saturday → تبدیل به ۰=شنبه
+    return (d.getDay() + 1) % 7;
+  }
+
+  // ===== تعداد روزهای ماه شمسی =====
+  function daysInJalaliMonth(jy, jm) {
+    if (jm <= 6) return 31;
+    if (jm <= 11) return 30;
+    // اسفند: ۲۹ یا ۳۰
+    return isLeapJalali(jy) ? 30 : 29;
+  }
+
+  function isLeapJalali(jy) {
+    return ((jy - 979) % 33) % 4 === 1 || ((jy - 979) % 33) % 4 === 2 || ((jy - 979) % 33) % 4 === 3;
+  }
+
+  // ===== رندر تقویم =====
+  const calMini = document.getElementById('calendarMini');
+  let currentJy = jy, currentJm = jm;
+
+  function renderCalendar() {
+    if (!calMini) return;
+
+    const firstWeekday = getJalaliWeekday(currentJy, currentJm, 1);
+    const totalDays = daysInJalaliMonth(currentJy, currentJm);
+    const monthName = MONTHS_FA[currentJm - 1];
+    const isCurrentMonth = (currentJy === jy && currentJm === jm);
+
+    // روزهای دارای رویداد (نمونه)
+    const eventDays = new Set([3, 10, 21, 15, 28, 5, 18]);
+
+    let daysHtml = '';
+    for (let i = 0; i < firstWeekday; i++) {
+      daysHtml += `<div class="cal-day is-empty" aria-hidden="true"></div>`;
+    }
+
+    for (let d = 1; d <= totalDays; d++) {
+      const isToday = isCurrentMonth && d === jd;
+      const hasEvent = eventDays.has(d);
+      const cls = [
+        'cal-day',
+        isToday ? 'is-today' : '',
+        hasEvent ? 'has-event' : ''
+      ].filter(Boolean).join(' ');
+
+      daysHtml += `<button type="button" class="${cls}" data-day="${d}" aria-label="${toFa(d)} ${monthName}${hasEvent ? ' — دارای رویداد' : ''}">
+        <span>${toFa(d)}</span>
+      </button>`;
+    }
+
+    calMini.innerHTML = `
+      <div class="cal-head">
+        <button class="cal-nav-btn" data-cal-prev aria-label="ماه قبل">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <div class="cal-month">${monthName} ${toFa(currentJy)}</div>
+        <button class="cal-nav-btn" data-cal-next aria-label="ماه بعد">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+      <div class="cal-weekdays" aria-hidden="true">
+        ${WEEKDAYS_FA.map(d => `<span>${d}</span>`).join('')}
+      </div>
+      <div class="cal-days">
+        ${daysHtml}
+      </div>
+    `;
+
+    calMini.querySelector('[data-cal-prev]')?.addEventListener('click', () => {
+      currentJm--;
+      if (currentJm < 1) { currentJm = 12; currentJy--; }
+      renderCalendar();
+    });
+
+    calMini.querySelector('[data-cal-next]')?.addEventListener('click', () => {
+      currentJm++;
+      if (currentJm > 12) { currentJm = 1; currentJy++; }
+      renderCalendar();
+    });
+
+    calMini.querySelectorAll('.cal-day[data-day]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const d = btn.dataset.day;
+        // در نسخه واقعی: انتقال به صفحه روز
+        // window.location.href = `day.html?y=${currentJy}&m=${currentJm}&d=${d}`;
+        console.log('روز انتخاب‌شده:', currentJy, currentJm, d);
+      });
+    });
+  }
+
+  renderCalendar();
+
+  // ===== شمارنده آمار =====
+  function animateCounters() {
+    const counters = document.querySelectorAll('[data-count]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.count, 10);
+          const duration = 1600;
+          const start = performance.now();
+
+          function step(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = toFa(Math.floor(eased * target).toLocaleString('en-US').replace(/,/g, '،'));
+            if (progress < 1) requestAnimationFrame(step);
+            else el.textContent = toFa(target.toLocaleString('en-US').replace(/,/g, '،'));
+          }
+
+          requestAnimationFrame(step);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => observer.observe(c));
+  }
+
+  animateCounters();
+
+  // ===== تغییر تم =====
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const html = document.documentElement;
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'night') {
+    html.setAttribute('data-theme', 'night');
+    updateThemeIcon('night');
+  }
+
+  themeToggle?.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    const next = current === 'night' ? 'day' : 'night';
+
+    if (next === 'night') {
+      html.setAttribute('data-theme', 'night');
+    } else {
+      html.removeAttribute('data-theme');
+    }
+
+    localStorage.setItem('theme', next);
+    updateThemeIcon(next);
+  });
+
+  function updateThemeIcon(theme) {
+    if (!themeIcon) return;
+    if (theme === 'night') {
+      themeIcon.innerHTML = '<circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line>';
+    } else {
+      themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+    }
+  }
+
+  // ===== منوی موبایل =====
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  menuToggle?.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!expanded));
+    mainNav?.classList.toggle('is-open');
+  });
+
+  // ===== اسکرول نرم =====
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
