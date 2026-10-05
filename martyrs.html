@@ -1188,10 +1188,13 @@ input[type="range"]::-moz-range-thumb {
 }
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/site-data.js"></script>
+<script src="assets/js/page-data.js"></script>
+<link rel="manifest" href="manifest.json">
 </head>
 
 <body>
-<header class="shared-header"><div class="shared-container shared-header-inner"><a class="shared-brand" href="index.html"><img src="assets/images/logo.png" alt="تقویم شهدا" class="shared-logo"><span class="shared-brand-text"><strong>تقویم شهدا</strong><small>اطلس زمانی و انسانی شهدا</small></span></a><button class="shared-menu-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">☰</button><nav class="shared-nav" aria-label="منوی اصلی"><a data-page="home" href="index.html">نخست</a><a data-page="calendar" href="calendar.html">تقویم</a><a data-page="today" href="today.html">امروز</a><a data-page="martyrs" href="martyrs.html">شهدا</a><a data-page="events" href="events.html">رویدادها</a><a data-page="search" href="search.html">جست‌وجو</a><a data-page="about" href="about.html">درباره</a></nav></div></header>
+<header class="shared-header"><div class="shared-container shared-header-inner"><a class="shared-brand" href="index.html"><img src="assets/images/logo.png" alt="تقویم شهدا" class="shared-logo"><span class="shared-brand-text"><strong>تقویم شهدا</strong><small>اطلس زمانی و انسانی شهدا</small></span></a><button class="shared-menu-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">☰</button><header class="shared-header"><div class="shared-container shared-header-inner"><a class="shared-brand" href="index.html"><img src="assets/images/logo.png" alt="تقویم شهدا" class="shared-logo"><span class="shared-brand-text"><strong>تقویم شهدا</strong><small>اطلس زمانی و انسانی شهدا</small></span></a><button class="shared-menu-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">☰</button><nav class="shared-nav" aria-label="منوی اصلی"><a data-page="home" href="index.html">نخست</a><a data-page="calendar" href="calendar.html">تقویم</a><a data-page="today" href="today.html">امروز</a><a data-page="martyrs" href="martyrs.html">شهدا</a><a data-page="events" href="events.html">رویدادها</a><a data-page="places" href="places.html">مکان‌ها</a><a data-page="periods" href="periods.html">دوره‌ها</a><a data-page="sources" href="sources.html">منابع</a><a data-page="encyclopedia" href="encyclopedia.html">دانشنامه</a><a data-page="search" href="search.html">جست‌وجو</a><a data-page="about" href="about.html">درباره</a><a data-page="contribute" href="contribute.html">همکاری</a><a data-page="contact" href="contact.html">تماس</a></nav></div></header></div></header>
 
 <!-- ============================================================
      HEADER
@@ -1452,21 +1455,7 @@ input[type="range"]::-moz-range-thumb {
   }
 
   // ===== داده نمونه شهدا =====
-  const MARTYRS = [
-    { id: 1, name: 'شهید علی محمدی', father: 'حسن', birth: 1345, martyrdom: 1365, birthDate: '۱۳۴۵/۰۱/۱۵', martyrDate: '۱۳۶۵/۰۳/۰۳', province: 'خوزستان', city: 'شلمچه', operation: 'کربلای ۵', period: 'دفاع مقدس', age: 20, verified: true, tags: ['شلمچه', 'کربلای ۵'] },
-    { id: 2, name: 'شهید رضا حسینی', father: 'محمد', birth: 1343, martyrdom: 1361, birthDate: '۱۳۴۳/۰۵/۱۰', martyrDate: '۱۳۶۱/۰۷/۲۰', province: 'تهران', city: 'تهران', operation: 'بیت‌المقدس', period: 'دفاع مقدس', age: 18, verified: true, tags: ['بیت‌المقدس'] },
-    { id: 3, name: 'شهید محسن کریمی', father: 'قاسم', birth: 1348, martyrdom: 1367, birthDate: '۱۳۴۸/۰۳/۰۵', martyrDate: '۱۳۶۷/۰۵/۱۵', province: 'اصفهان', city: 'اصفهان', operation: 'والفجر ۱۰', period: 'دفاع مقدس', age: 19, verified: true, tags: ['والفجر'] },
-    { id: 4, name: 'شهید حسین نجفی', father: 'جواد', birth: 1350, martyrdom: 1395, birthDate: '۱۳۵۰/۰۹/۲۲', martyrDate: '۱۳۹۵/۰۴/۱۰', province: 'فارس', city: 'شیراز', operation: 'مدافع حرم', period: 'مدافعان حرم', age: 45, verified: true, tags: ['مدافع حرم', 'سوریه'] },
-    { id: 5, name: 'شهید مهدی صادقی', father: 'اکبر', birth: 1342, martyrdom: 1362, birthDate: '۱۳۴۲/۱۱/۱۸', martyrDate: '۱۳۶۲/۰۲/۲۵', province: 'خوزستان', city: 'خرمشهر', operation: 'بیت‌المقدس', period: 'دفاع مقدس', age: 20, verified: false, tags: ['خرمشهر', 'آزادسازی'] },
-    { id: 6, name: 'شهید سعید رضایی', father: 'بهرام', birth: 1346, martyrdom: 1365, birthDate: '۱۳۴۶/۰۷/۱۲', martyrDate: '۱۳۶۵/۰۱/۰۵', province: 'مشهد', city: 'مشهد', operation: 'کربلای ۵', period: 'دفاع مقدس', age: 19, verified: true, tags: ['کربلای ۵'] },
-    { id: 7, name: 'شهید مجید قاسمی', father: 'ناصر', birth: 1344, martyrdom: 1363, birthDate: '۱۳۴۴/۰۴/۰۳', martyrDate: '۱۳۶۳/۰۸/۱۴', province: 'تهران', city: 'تهران', operation: 'بدر', period: 'دفاع مقدس', age: 19, verified: true, tags: ['بدر'] },
-    { id: 8, name: 'شهید امیر خسروی', father: 'حسن', birth: 1349, martyrdom: 1366, birthDate: '۱۳۴۹/۱۲/۰۸', martyrDate: '۱۳۶۶/۰۳/۲۲', province: 'اصفهان', city: 'کاشان', operation: 'کربلای ۱۰', period: 'دفاع مقدس', age: 17, verified: true, tags: ['کربلای ۱۰'] },
-    { id: 9, name: 'شهید محمد علیزاده', father: 'یدالله', birth: 1341, martyrdom: 1360, birthDate: '۱۳۴۱/۰۶/۲۵', martyrDate: '۱۳۶۰/۰۹/۱۸', province: 'فارس', city: 'شیراز', operation: 'ثامن‌الائمه', period: 'دفاع مقدس', age: 19, verified: false, tags: ['ثامن‌الائمه'] },
-    { id: 10, name: 'شهید احمد کاظمی', father: 'رحمت', birth: 1337, martyrdom: 1384, birthDate: '۱۳۳۷/۰۵/۱۰', martyrDate: '۱۳۸۴/۱۰/۱۹', province: 'تهران', city: 'تهران', operation: '—', period: 'شهدای امنیت', age: 47, verified: true, tags: ['فرمانده'] },
-    { id: 11, name: 'شهید مرتضی طالبی', father: 'اسماعیل', birth: 1347, martyrdom: 1364, birthDate: '۱۳۴۷/۰۸/۰۲', martyrDate: '۱۳۶۴/۱۲/۱۱', province: 'خوزستان', city: 'اهواز', operation: 'والفجر ۸', period: 'دفاع مقدس', age: 17, verified: true, tags: ['والفجر ۸'] },
-    { id: 12, name: 'شهید یاسر جعفری', father: 'محمود', birth: 1362, martyrdom: 1396, birthDate: '۱۳۶۲/۰۲/۱۴', martyrDate: '۱۳۹۶/۰۶/۲۰', province: 'مشهد', city: 'مشهد', operation: 'مدافع حرم', period: 'مدافعان حرم', age: 34, verified: true, tags: ['مدافع حرم', 'سوریه'] }
-  ];
-
+  var MARTYRS = window.PageData.martyrs;
   // ===== State =====
   const state = {
     query: '',
@@ -1889,7 +1878,7 @@ input[type="range"]::-moz-range-thumb {
 })();
 </script>
 
-<footer class="shared-footer"><div class="shared-container shared-footer-grid"><div class="shared-footer-main"><a href="index.html" class="shared-footer-brand"><img src="assets/images/logo.png" alt="تقویم شهدا"><span><strong>تقویم شهدا</strong><small>اطلس زمانی، تاریخی و انسانی شهدا و رویدادهای مرتبط؛ مرجع زمانی، تاریخی و انسانی برای ثبت، جست‌وجو و شناخت شهدا و رویدادهای مرتبط.</small></span></a></div><div class="shared-footer-links"><a href="#"></a><a href="#"></a><a href="#"></a><a href="#"></a></div><div class="shared-footer-links"><a href="#"></a><a href="#"></a><a href="#"></a><a href="#"></a></div></div></footer>
+<footer class="shared-footer"><div class="shared-container shared-footer-grid"><div class="shared-footer-main"><a href="index.html" class="shared-footer-brand"><img src="assets/images/logo.png" alt="تقویم شهدا"><span><strong>تقویم شهدا</strong><small>اطلس زمانی، تاریخی و انسانی شهدا و رویدادهای مرتبط؛ مرجع زمانی، تاریخی و انسانی برای ثبت، جست‌وجو و شناخت شهدا و رویدادهای مرتبط.</small></span></a></div><div class="shared-footer-links"><a href="index.html">نخست</a><a href="calendar.html">تقویم</a><a href="today.html">امروز</a><a href="martyrs.html">شهدا</a><a href="events.html">رویدادها</a></div><div class="shared-footer-links"><a href="places.html">مکان‌ها</a><a href="periods.html">دوره‌ها</a><a href="sources.html">منابع</a><a href="encyclopedia.html">دانشنامه</a><a href="contact.html">تماس</a></div></div></footer>
 <script src="assets/js/site.js"></script>
 </body>
 </html>
