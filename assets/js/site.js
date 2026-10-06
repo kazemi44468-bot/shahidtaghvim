@@ -78,10 +78,11 @@
       }
       function isOpen() { return menu.classList.contains('is-open'); }
 
-      // کلیک روی کل گروه (برچسب یا فلش) زیرمنو را باز/بسته می‌کند،
-      // چون کاربر انتظار دارد کلیک روی منو کار کند.
-      g.addEventListener('click', function (e) {
+      // خود عنوان گروه لینک واقعی است و باید به صفحه اصلی گروه برود.
+      // فقط فلش مسئول باز/بسته‌کردن زیرمنو است.
+      caret.addEventListener('click', function (e) {
         e.preventDefault();
+        e.stopPropagation();
         var willOpen = !isOpen();
         closeAllGroups(g);
         setOpen(willOpen);
@@ -91,6 +92,7 @@
       caret.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
+          e.stopPropagation();
           var willOpen = !isOpen();
           closeAllGroups(g);
           setOpen(willOpen);
