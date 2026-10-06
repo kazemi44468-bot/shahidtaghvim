@@ -1162,6 +1162,146 @@ ul, ol { list-style: none; }
   }
   .month-cell.is-today.has-events::after { background: var(--c-gold-soft); }
 }
+/* ============================================================
+   نمایش کامل رویدادها در تقویم (افزوده)
+   ============================================================ */
+.month-cell { min-height: 138px; }
+
+.cell-count {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--c-gold);
+  background: var(--c-gold-bg);
+  border-radius: 999px;
+  padding: 1px 7px;
+  white-space: nowrap;
+  font-feature-settings: 'ss01';
+}
+.month-cell.is-today .cell-count { background: rgba(255,255,255,.18); color: #fff; }
+
+.cell-events {
+  overflow-y: auto;
+  max-height: 104px;
+  padding-left: 2px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-line) transparent;
+}
+.cell-events::-webkit-scrollbar { width: 4px; }
+.cell-events::-webkit-scrollbar-thumb { background: var(--c-line); border-radius: 4px; }
+
+.cell-event {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: normal;
+  line-height: 1.5;
+}
+
+.ev-year {
+  flex: none;
+  font-size: 0.6rem;
+  font-weight: 800;
+  font-feature-settings: 'ss01';
+  background: rgba(0,0,0,.06);
+  border-radius: 3px;
+  padding: 0 4px;
+  line-height: 1.6;
+}
+.month-cell.is-today .ev-year { background: rgba(255,255,255,.22); }
+
+.ev-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* رنگ‌بندی تفکیکی انواع رویداد */
+.cell-event.type-revolution { background: #fdeedd; color: #a35a12; }
+.cell-event.type-event { background: #eef1f6; color: #46566e; }
+.week-event.type-revolution { background: #fdeedd; border-color: #b06a1f; }
+.week-event.type-event { background: #eef1f6; border-color: #64748b; }
+
+/* نمای هفتگی */
+.week-event .ev-year { display: inline-block; margin-bottom: 3px; }
+.week-event-desc { display: block; }
+.week-empty {
+  font-size: 0.75rem;
+  color: var(--c-ink-mute);
+  text-align: center;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+/* کارت‌های روز */
+.day-event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: center;
+  font-size: 0.72rem;
+  color: var(--c-ink-mute);
+  margin: 4px 0 var(--sp-2);
+}
+.day-event-meta .ev-year, .panel-event-meta .ev-year { background: var(--c-gold-bg); color: var(--c-gold); }
+.day-event-card.type-revolution { border-color: #b06a1f; }
+.day-event-card.type-event { border-color: #64748b; }
+.panel-event-meta { font-size: 0.72rem; color: var(--c-ink-mute); margin-bottom: 4px; }
+
+/* مناسبت‌های قمری و متغیر */
+.variable-events { margin-top: var(--sp-5); }
+.variable-head { margin-bottom: var(--sp-3); }
+.variable-title {
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  color: var(--c-ink);
+  margin: 0 0 4px;
+}
+.variable-title::before {
+  content: '';
+  display: inline-block;
+  width: 8px; height: 8px;
+  margin-left: 8px;
+  border-radius: 50%;
+  background: var(--c-gold);
+}
+.variable-sub { font-size: var(--fs-xs); color: var(--c-ink-mute); margin: 0; line-height: 1.9; }
+.variable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: var(--sp-3);
+}
+.variable-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-line-soft);
+  border-right: 3px solid var(--c-gold);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-3);
+  transition: all .2s var(--ease);
+}
+.variable-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.variable-card.type-martyrdom { border-right-color: var(--c-accent); }
+.variable-card.type-operation { border-right-color: var(--c-primary-3); }
+.variable-card.type-revolution { border-right-color: #b06a1f; }
+.variable-card.type-event { border-right-color: #64748b; }
+.variable-date {
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--c-gold);
+  background: var(--c-gold-bg);
+  border-radius: 999px;
+  padding: 2px 9px;
+  margin-bottom: 6px;
+}
+.variable-card h4 { font-size: var(--fs-sm); margin: 0 0 4px; color: var(--c-ink); }
+.variable-card p { font-size: 0.72rem; line-height: 1.8; color: var(--c-ink-soft); margin: 0; }
+
+@media (max-width: 720px) {
+  .month-cell { min-height: 100px; }
+  .cell-events { max-height: 66px; }
+}
+
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="stylesheet" href="assets/css/site-nav.css">
@@ -1188,7 +1328,7 @@ ul, ol { list-style: none; }
       <nav class="breadcrumb" aria-label="مسیر"><ol><li><a href="index.html">خانه</a></li><li><a href="calendar.html">تقویم و زمان</a></li><li aria-current="page">تقویم</li></ol></nav>
       <h1 class="page-title">تقویم</h1>
       <p class="page-lead">
-        حرکت در زمان از گذشته تا امروز و آینده. هر روز می‌تواند دروازه‌ای به یک رویداد، یک شخص یا یک مکان باشد.
+        حرکت در زمان از گذشته تا امروز. هر رویداد در همان روز و ماهِ وقوع، در همهٔ سال‌ها نمایش داده می‌شود تا سالگردها یک‌جا دیده شوند.
       </p>
     </div>
   </section>
@@ -1242,6 +1382,9 @@ ul, ol { list-style: none; }
           <div id="viewContainer">
             <!-- توسط JS پر می‌شود -->
           </div>
+
+          <!-- مناسبت‌های قمری که تاریخ شمسی ثابت ندارند -->
+          <div id="variableEvents" class="variable-events"></div>
 
         </div>
 
@@ -1382,22 +1525,38 @@ ul, ol { list-style: none; }
     };
   }
 
+  // آیا رویداد تاریخ شمسی ثابت (سال/ماه/روز) دارد؟
+  function isFixed(e) {
+    const d = eventDate(e);
+    return d.y > 0 && d.m > 0 && d.d > 0;
+  }
+
+  // رویدادهای قمری/متغیر که تاریخ شمسی ثابت ندارند
+  function getVariableEvents() {
+    return EVENTS.filter(e => !isFixed(e) && (state.filter === 'all' || e.type === state.filter));
+  }
+
+  function passFilter(e) {
+    return state.filter === 'all' || e.type === state.filter;
+  }
+
+  function byYear(a, b) {
+    return eventDate(a).y - eventDate(b).y;
+  }
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  // تقویم شهدا سال‌گرد است: هر رویداد در همهٔ سال‌ها، در همان روز و ماه دیده می‌شود.
   function getEventsFor(jy, jm, jd) {
-    return EVENTS.filter(e => {
-      const d = eventDate(e);
-      if (d.y !== jy || d.m !== jm || d.d !== jd) return false;
-      if (state.filter === 'all') return true;
-      return e.type === state.filter;
-    });
+    return EVENTS.filter(e => isFixed(e) && eventDate(e).m === jm && eventDate(e).d === jd && passFilter(e)).sort(byYear);
   }
 
   function getEventsForMonth(jy, jm) {
-    return EVENTS.filter(e => {
-      const d = eventDate(e);
-      if (d.y !== jy || d.m !== jm) return false;
-      if (state.filter === 'all') return true;
-      return e.type === state.filter;
-    });
+    return EVENTS.filter(e => isFixed(e) && eventDate(e).m === jm && passFilter(e)).sort(byYear);
   }
 
   function typeLabel(type) {
@@ -1418,7 +1577,7 @@ ul, ol { list-style: none; }
       operation: 'operation',
       ceremony: 'ceremony',
       birth: 'birth',
-      revolution: 'operation',
+      revolution: 'revolution',
       event: 'ceremony',
       war: 'operation'
     }[type] || 'ceremony';
@@ -1430,6 +1589,8 @@ ul, ol { list-style: none; }
       case 'operation': return '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L4 7 L4 12 C4 17 12 22 12 22 C12 22 20 17 20 12 L20 7 Z"/></svg>';
       case 'ceremony': return '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L15 9 L22 9 L17 14 L19 21 L12 17 L5 21 L7 14 L2 9 L9 9 Z"/></svg>';
       case 'birth': return '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L15 15"/></svg>';
+      case 'revolution': return '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 C8 6.5 6 10 6 13.5 a6 6 0 0 0 12 0 C18 10 16 6.5 12 2 Z"/></svg>';
+      case 'event': return '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21 V4"/><path d="M5 5 h11 l-2.5 3.5 L16 12 H5"/></svg>';
       default: return '';
     }
   }
@@ -1474,10 +1635,11 @@ ul, ol { list-style: none; }
       const [gy, gm, gd] = jalaliToGregorian(state.jy, state.jm, d);
       const isHoliday = getJalaliWeekday(state.jy, state.jm, d) === 6;
 
-      const eventsHtml = dayEvents.slice(0, 2).map(e => 
-        `<span class="cell-event type-${eventCssType(e.type)}">${e.title}</span>`
+      const eventsHtml = dayEvents.map(e =>
+        `<span class="cell-event type-${eventCssType(e.type)}" title="${esc(e.title)} — ${toFa(eventDate(e).y)}">
+          <b class="ev-year">${toFa(eventDate(e).y)}</b><span class="ev-title">${esc(e.title)}</span>
+        </span>`
       ).join('');
-      const moreHtml = dayEvents.length > 2 ? `<span class="cell-more">+${toFa(dayEvents.length - 2)} مورد دیگر</span>` : '';
 
       const cls = [
         'month-cell',
@@ -1491,9 +1653,11 @@ ul, ol { list-style: none; }
         <button type="button" class="${cls}" data-day="${d}" aria-label="${toFa(d)} ${MONTHS_FA[state.jm - 1]}">
           <div class="cell-head">
             <span class="cell-num">${toFa(d)}</span>
-            <span class="cell-greg">${toFa(gd)} ${GREG_MONTHS[gm - 1].slice(0, 3)}</span>
+            ${dayEvents.length
+              ? `<span class="cell-count">${toFa(dayEvents.length)} رویداد</span>`
+              : `<span class="cell-greg">${toFa(gd)} ${GREG_MONTHS[gm - 1].slice(0, 3)}</span>`}
           </div>
-          <div class="cell-events">${eventsHtml}${moreHtml}</div>
+          <div class="cell-events">${eventsHtml}</div>
         </button>
       `;
     }
@@ -1532,11 +1696,12 @@ ul, ol { list-style: none; }
       const eventsHtml = dayEvents.length
         ? dayEvents.map(e => `
             <div class="week-event type-${eventCssType(e.type)}" data-day="${curJd}">
-              <strong>${e.title}</strong>
-              <span>${e.desc}</span>
+              <span class="ev-year">${toFa(eventDate(e).y)}</span>
+              <strong>${esc(e.title)}</strong>
+              <span class="week-event-desc">${esc(e.desc)}</span>
             </div>
           `).join('')
-        : `<p style="font-size: 0.75rem; color: var(--c-ink-mute); text-align: center; padding: 1rem 0;">رویدادی ثبت نشده</p>`;
+        : `<p class="week-empty">رویدادی ثبت نشده</p>`;
 
       colsHtml += `
         <div class="week-col ${isToday ? 'is-today' : ''}" data-day="${curJd}" data-jm="${curJm}" data-jy="${curJy}">
@@ -1607,8 +1772,14 @@ ul, ol { list-style: none; }
           <div class="day-event-card type-${eventCssType(e.type)}">
             <div class="day-event-icon">${typeIcon(e.type)}</div>
             <div class="day-event-content">
-              <h4>${e.title}</h4>
-              <p>${e.desc}</p>
+              <h4>${esc(e.title)}</h4>
+              <div class="day-event-meta">
+                <span class="ev-year">${toFa(eventDate(e).y)}</span>
+                <span>${typeLabel(e.type)}</span>
+                ${e.city ? `<span>${esc(e.city)}</span>` : ''}
+                ${e.source ? `<span>${esc(e.source)}</span>` : ''}
+              </div>
+              <p>${esc(e.desc)}</p>
             </div>
           </div>
         `).join('')
@@ -1657,6 +1828,32 @@ ul, ol { list-style: none; }
     container.innerHTML = html;
     updateTitle();
     attachViewHandlers();
+    renderVariableEvents();
+  }
+
+  // ===== مناسبت‌های قمری و متغیر (تاریخ شمسی ثابت ندارند) =====
+  function renderVariableEvents() {
+    const box = document.getElementById('variableEvents');
+    if (!box) return;
+
+    const list = getVariableEvents();
+    if (!list.length) { box.innerHTML = ''; return; }
+
+    box.innerHTML = `
+      <div class="variable-head">
+        <h3 class="variable-title">مناسبت‌های قمری و متغیر</h3>
+        <p class="variable-sub">این رویدادها تاریخ شمسی ثابت ندارند و هر سال جابه‌جا می‌شوند؛ ازاین‌رو در خانه‌های تقویم جای نمی‌گیرند و جداگانه فهرست شده‌اند.</p>
+      </div>
+      <div class="variable-grid">
+        ${list.map(e => `
+          <article class="variable-card type-${eventCssType(e.type)}">
+            <span class="variable-date">${esc(e.dateText)}</span>
+            <h4>${esc(e.title)}</h4>
+            <p>${esc(e.desc)}</p>
+          </article>
+        `).join('')}
+      </div>
+    `;
   }
 
   // ===== Handlers =====
@@ -1717,9 +1914,10 @@ ul, ol { list-style: none; }
         <div class="panel-section">
           <div class="panel-section-title">رویدادها (${toFa(dayEvents.length)})</div>
           ${dayEvents.map(e => `
-            <div class="panel-event">
-              <h4>${e.title}</h4>
-              <p>${e.desc} — ${typeLabel(e.type)}</p>
+            <div class="panel-event type-${eventCssType(e.type)}">
+              <h4>${esc(e.title)}</h4>
+              <div class="panel-event-meta"><span class="ev-year">${toFa(eventDate(e).y)}</span> ${typeLabel(e.type)}${e.city ? ' — ' + esc(e.city) : ''}</div>
+              <p>${esc(e.desc)}</p>
             </div>
           `).join('')}
         </div>
