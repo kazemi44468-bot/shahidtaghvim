@@ -1,12 +1,6 @@
-/* ============================================================
-   تقویم شهدا — لایه داده
-   ------------------------------------------------------------
-   این فایل به‌صورت خودکار از tools/ ساخته می‌شود.
-   برای تغییر داده، فایل‌های tools/*.json را ویرایش کنید.
-   ============================================================ */
-(function (global) {
-  'use strict';
-  var events = [
+/* تقویم شهدا — لایه داده تولیدشده از tools/*.json */
+(function(global){'use strict';
+var events=[
   {
     "id": "EV-MASHROUTE",
     "date": "۱۲۸۵/۰۵/۱۴",
@@ -1053,7 +1047,7 @@
     "status": "تأییدشده"
   }
 ];
-  var martyrs = [
+var martyrs=[
   {
     "id": "SHAHID-MOTAHHARI",
     "name": "مرتضی مطهری",
@@ -1107,20 +1101,6 @@
     "role": "روحانی، امام‌جمعهٔ کرمانشاه",
     "operation": "",
     "note": "چهارمین شهید محراب؛ در ۲۳ مهر ۱۳۶۱ در کرمانشاه ترور شد؛ تاریخ تولد نیازمند بررسی است.",
-    "source": "بنیاد شهید و امور ایثارگران",
-    "status": "تأییدشده"
-  },
-  {
-    "id": "SHAHID-GHODUSI",
-    "name": "سید حسن قاضی‌طباطبایی",
-    "kind": "شهید",
-    "birth": "۱۲۹۰/۰۱/۰۱",
-    "martyrdom": "۱۳۶۳/۰۹/۱۴",
-    "place": "تبریز",
-    "country": "ایران",
-    "role": "روحانی، امام‌جمعهٔ تبریز",
-    "operation": "",
-    "note": "پنجمین شهید محراب؛ در ۱۴ آذر ۱۳۶۳ در تبریز ترور شد؛ تاریخ تولد نیازمند بررسی است.",
     "source": "بنیاد شهید و امور ایثارگران",
     "status": "تأییدشده"
   },
@@ -1221,20 +1201,6 @@
     "note": "در ۹ شهریور ۱۳۶۲ در مشهد ترور شد؛ تاریخ تولد نیازمند بررسی است.",
     "source": "مرکز اسناد انقلاب اسلامی",
     "status": "تأییدشده"
-  },
-  {
-    "id": "SHAHID-EJEI",
-    "name": "سید محمدعلی قاضی‌طباطبایی (ایجی)",
-    "kind": "شهید",
-    "birth": "۱۳۲۰/۰۱/۰۱",
-    "martyrdom": "۱۳۶۰/۰۲/۰۱",
-    "place": "تهران",
-    "country": "ایران",
-    "role": "روحانی، دادستان کل انقلاب اسلامی",
-    "operation": "",
-    "note": "در اردیبهشت ۱۳۶۰ در تهران ترور شد؛ تاریخ تولد و روز دقیق شهادت نیازمند بررسی است.",
-    "source": "مرکز اسناد انقلاب اسلامی",
-    "status": "نیازمند بررسی"
   },
   {
     "id": "SHAHID-TAYYEB",
@@ -1727,7 +1693,7 @@
     "status": "تأییدشده"
   }
 ];
-  var places = [
+var places=[
   {
     "id": "PLACE-KHORRAMSHAHR",
     "name": "خرمشهر",
@@ -2101,9 +2067,64 @@
     "period": "دفاع مقدس",
     "note": "گلزار شهدای خرمشهر از زیارت‌گاه‌های مهم یادبود شهیدان دفاع مقدس در جنوب است.",
     "source": "بنیاد حفظ آثار و نشر ارزش‌های دفاع مقدس"
+  },
+  {
+    "id": "PLACE-BIDGANEH",
+    "name": "بیدگنه",
+    "region": "تهران",
+    "country": "ایران",
+    "type": "منطقه",
+    "related": "پادگان مدرس و محل شهادت حسن طهرانی‌مقدم",
+    "period": "معاصر",
+    "note": "بیدگنه در شهرستان ملارد استان تهران قرار دارد و محل حادثه پادگان مدرس در ۲۱ آبان ۱۳۹۰ بود.",
+    "source": "منابع رسمی دفاعی"
+  },
+  {
+    "id": "PLACE-ABSARD",
+    "name": "آبسرد",
+    "region": "تهران",
+    "country": "ایران",
+    "type": "شهر",
+    "related": "محل شهادت محسن فخری‌زاده",
+    "period": "معاصر",
+    "note": "آبسرد در شهرستان دماوند استان تهران محل ترور محسن فخری‌زاده در ۷ آذر ۱۳۹۹ بود.",
+    "source": "منابع رسمی کشور"
+  },
+  {
+    "id": "PLACE-BAGHDAD",
+    "name": "بغداد",
+    "region": "عراق",
+    "country": "عراق",
+    "type": "شهر",
+    "related": "محل شهادت قاسم سلیمانی",
+    "period": "معاصر",
+    "note": "قاسم سلیمانی در ۱۳ دی ۱۳۹۸ در نزدیکی فرودگاه بغداد به شهادت رسید.",
+    "source": "منابع رسمی جمهوری اسلامی ایران"
+  },
+  {
+    "id": "PLACE-ALEPPO",
+    "name": "حلب",
+    "region": "سوریه",
+    "country": "سوریه",
+    "type": "شهر",
+    "related": "محل شهادت حسین همدانی",
+    "period": "مدافعان حرم",
+    "note": "حسین همدانی در ۱۶ مهر ۱۳۹۴ در حومه حلب سوریه به شهادت رسید.",
+    "source": "کمیته جست‌وجوی مفقودین ستاد کل نیروهای مسلح"
+  },
+  {
+    "id": "PLACE-ALTANF",
+    "name": "التنف",
+    "region": "سوریه",
+    "country": "سوریه",
+    "type": "منطقه",
+    "related": "محل شهادت محسن حججی",
+    "period": "مدافعان حرم",
+    "note": "التنف در منطقه مرزی سوریه و عراق و محل اسارت و شهادت محسن حججی در مرداد ۱۳۹۶ بود.",
+    "source": "منابع رسمی دفاع از حرم"
   }
 ];
-  var periods = [
+var periods=[
   {
     "id": "PERIOD-EARLY-ISLAM",
     "title": "صدر اسلام",
@@ -2182,7 +2203,7 @@
     "note": "دوره همه‌گیری کرونا و شهادت کادر درمان."
   }
 ];
-  var sources = [
+var sources=[
   {
     "id": "SRC-BONYAD-SHAHID",
     "title": "بنیاد شهید و امور ایثارگران",
@@ -2268,13 +2289,13 @@
     "note": "ساختار ثبت اطلاعات هویتی، زمانی و مکانی هر شهید."
   }
 ];
-  var MONTHS = ["فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"];
-  var WEEKDAYS = ["شنبه","یک‌شنبه","دوشنبه","سه‌شنبه","چهارشنبه","پنج‌شنبه","جمعه"];
-  function toFa(value){return String(value).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d];});}
-  function toJalali(gy,gm,gd){var g_d_m=[0,31,59,90,120,151,181,212,243,273,304,334];var jy=(gy<=1600)?0:979;gy-=(gy<=1600)?621:1600;var gy2=(gm>2)?gy+1:gy;var days=(365*gy)+Math.floor((gy2+3)/4)-Math.floor((gy2+99)/100)+Math.floor((gy2+399)/400)-80+gd+g_d_m[gm-1];jy+=33*Math.floor(days/12053);days%=12053;jy+=4*Math.floor(days/1461);days%=1461;if(days>365){jy+=Math.floor((days-1)/365);days=(days-1)%365;}var jm=(days<186)?1+Math.floor(days/31):7+Math.floor((days-186)/30);var jd=1+((days<186)?days%31:(days-186)%30);return [jy,jm,jd];}
-  function todayJalali(){var now=new Date();return toJalali(now.getFullYear(),now.getMonth()+1,now.getDate());}
-  function parseJalali(str){if(!str)return null;var fa='۰۱۲۳۴۵۶۷۸۹';var en=String(str).replace(/[۰-۹]/g,function(ch){return fa.indexOf(ch);});if(!/^\d+\/\d+\/\d+$/.test(en))return null;var p=en.split('/').map(function(x){return parseInt(x,10);});if(p.length<3||isNaN(p[0]))return null;return {y:p[0],m:p[1],d:p[2]};}
-  function formatJalali(str){var p=parseJalali(str);if(!p)return str||'—';return toFa(p.d)+' '+MONTHS[p.m-1]+' '+toFa(p.y);}
-  function qs(name){var m=new RegExp('[?&]'+name+'=([^&#]*)').exec(global.location.search);return m?decodeURIComponent(m[1].replace(/\+/g,' ')):'';}
-  global.SiteData={events:events,martyrs:martyrs,places:places,periods:periods,sources:sources,MONTHS:MONTHS,WEEKDAYS:WEEKDAYS,toFa:toFa,toJalali:toJalali,todayJalali:todayJalali,parseJalali:parseJalali,formatJalali:formatJalali,qs:qs,find:function(list,id){for(var i=0;i<list.length;i++)if(list[i].id===id)return list[i];return null;},eventsOn:function(m,d){return events.filter(function(e){var p=parseJalali(e.date);return p&&p.m===m&&p.d===d;});},searchAll:function(q){q=(q||'').trim();if(!q)return [];var out=[];events.forEach(function(e){if((e.title+' '+e.desc+' '+e.tags+' '+e.city).indexOf(q)!==-1)out.push({kind:'رویداد',title:e.title,desc:e.city,href:'event.html?id='+e.id});});martyrs.forEach(function(s){if((s.name+' '+s.role+' '+s.place+' '+s.note).indexOf(q)!==-1)out.push({kind:'شخص',title:s.name,desc:s.role,href:'martyrs.html'});});places.forEach(function(p){if((p.name+' '+p.region+' '+p.related).indexOf(q)!==-1)out.push({kind:'مکان',title:p.name,desc:p.region,href:'place.html?id='+p.id});});periods.forEach(function(p){if((p.title+' '+p.note).indexOf(q)!==-1)out.push({kind:'دوره',title:p.title,desc:p.from+' — '+p.to,href:'period.html?id='+p.id});});sources.forEach(function(s){if((s.title+' '+s.org+' '+s.note).indexOf(q)!==-1)out.push({kind:'منبع',title:s.title,desc:s.kind,href:'source.html?id='+s.id});});return out;}};
+var MONTHS=['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
+var WEEKDAYS=['شنبه','یک‌شنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنج‌شنبه','جمعه'];
+function toFa(v){return String(v).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d];});}
+function toJalali(gy,gm,gd){var g=[0,31,59,90,120,151,181,212,243,273,304,334],jy=gy<=1600?0:979;gy-=gy<=1600?621:1600;var gy2=gm>2?gy+1:gy,days=365*gy+Math.floor((gy2+3)/4)-Math.floor((gy2+99)/100)+Math.floor((gy2+399)/400)-80+gd+g[gm-1];jy+=33*Math.floor(days/12053);days%=12053;jy+=4*Math.floor(days/1461);days%=1461;if(days>365){jy+=Math.floor((days-1)/365);days=(days-1)%365;}var jm=days<186?1+Math.floor(days/31):7+Math.floor((days-186)/30),jd=1+(days<186?days%31:(days-186)%30);return[jy,jm,jd];}
+function todayJalali(){var n=new Date();return toJalali(n.getFullYear(),n.getMonth()+1,n.getDate());}
+function parseJalali(s){if(!s)return null;var en=String(s).replace(/[۰-۹]/g,function(c){return '۰۱۲۳۴۵۶۷۸۹'.indexOf(c);});if(!/^\d+\/\d+\/\d+$/.test(en))return null;var p=en.split('/').map(function(x){return parseInt(x,10);});return{y:p[0],m:p[1],d:p[2]};}
+function formatJalali(s){var p=parseJalali(s);return p?toFa(p.d)+' '+MONTHS[p.m-1]+' '+toFa(p.y):(s||'—');}
+function qs(n){var m=new RegExp('[?&]'+n+'=([^&#]*)').exec(global.location.search);return m?decodeURIComponent(m[1].replace(/\+/g,' ')):'';}
+global.SiteData={events:events,martyrs:martyrs,places:places,periods:periods,sources:sources,MONTHS:MONTHS,WEEKDAYS:WEEKDAYS,toFa:toFa,toJalali:toJalali,todayJalali:todayJalali,parseJalali:parseJalali,formatJalali:formatJalali,qs:qs,find:function(list,id){for(var i=0;i<list.length;i++)if(list[i].id===id)return list[i];return null;},eventsOn:function(m,d){return events.filter(function(e){var p=parseJalali(e.date);return p&&p.m===m&&p.d===d;});},searchAll:function(q){q=(q||'').trim();if(!q)return[];var o=[];events.forEach(function(e){if((e.title+' '+e.desc+' '+e.tags+' '+e.city).indexOf(q)!==-1)o.push({kind:'رویداد',title:e.title,desc:e.city,href:'event.html?id='+e.id});});martyrs.forEach(function(s){if((s.name+' '+s.role+' '+s.place+' '+s.note).indexOf(q)!==-1)o.push({kind:'شخص',title:s.name,desc:s.role,href:'martyrs.html'});});places.forEach(function(p){if((p.name+' '+p.region+' '+p.related).indexOf(q)!==-1)o.push({kind:'مکان',title:p.name,desc:p.region,href:'place.html?id='+p.id});});periods.forEach(function(p){if((p.title+' '+p.note).indexOf(q)!==-1)o.push({kind:'دوره',title:p.title,desc:p.from+' — '+p.to,href:'period.html?id='+p.id});});sources.forEach(function(s){if((s.title+' '+s.org+' '+s.note).indexOf(q)!==-1)o.push({kind:'منبع',title:s.title,desc:s.kind,href:'source.html?id='+s.id});});return o;}};
 })(window);
