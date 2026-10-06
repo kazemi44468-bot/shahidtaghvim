@@ -16,19 +16,6 @@
     var path = location.pathname.split('/').pop() || 'index.html';
     var key = path === 'index.html' ? 'home' : (path.replace('.html', '') || 'home');
 
-    /* ---------- مسیر مشترک صفحات ---------- */
-    var main = document.querySelector('main');
-    var breadcrumb = main ? main.querySelector('.breadcrumb') : null;
-    if (main && breadcrumb && !breadcrumb.closest('.shared-page-path')) {
-      var pathBar = document.createElement('div');
-      pathBar.className = 'shared-page-path';
-      var pathInner = document.createElement('div');
-      pathInner.className = 'shared-container';
-      main.insertBefore(pathBar, main.firstChild);
-      pathBar.appendChild(pathInner);
-      pathInner.appendChild(breadcrumb);
-    }
-
     /* ---------- ۱) صفحه فعال ---------- */
     Array.prototype.forEach.call(
       document.querySelectorAll('.shared-nav a[data-page]'),
