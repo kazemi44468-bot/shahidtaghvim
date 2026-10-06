@@ -50,8 +50,5 @@ body{font-family:Vazirmatn,sans-serif!important}
 .breadcrumb [aria-current="page"]{color:#0f2e24;font-weight:700}
 @media(max-width:640px){.breadcrumb{margin-bottom:1rem}.breadcrumb ol{max-width:100%;font-size:.75rem}.breadcrumb li{white-space:normal}}
 
-/* shared page path */
-.shared-page-path{position:relative;z-index:2;padding:14px 0 0;background:var(--shared-bg)}
-.shared-page-path .breadcrumb{margin:0}
-.shared-page-path .breadcrumb ol{max-width:100%}
-@media(max-width:720px){.shared-page-path{padding-top:10px}.shared-page-path .breadcrumb ol{font-size:.75rem}}
+
+@media(max-width:720px){}
