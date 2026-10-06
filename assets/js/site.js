@@ -17,13 +17,14 @@
     var key = path === 'index.html' ? 'home' : (path.replace('.html', '') || 'home');
 
     /* ---------- مسیر مشترک صفحات ---------- */
-    var breadcrumb = document.querySelector('main .breadcrumb');
-    if (breadcrumb && !breadcrumb.closest('.shared-page-path')) {
+    var main = document.querySelector('main');
+    var breadcrumb = main ? main.querySelector('.breadcrumb') : null;
+    if (main && breadcrumb && !breadcrumb.closest('.shared-page-path')) {
       var pathBar = document.createElement('div');
       pathBar.className = 'shared-page-path';
       var pathInner = document.createElement('div');
       pathInner.className = 'shared-container';
-      breadcrumb.parentNode.insertBefore(pathBar, breadcrumb.parentNode.firstChild);
+      main.insertBefore(pathBar, main.firstChild);
       pathBar.appendChild(pathInner);
       pathInner.appendChild(breadcrumb);
     }
