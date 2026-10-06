@@ -1,3 +1,5 @@
 _*.py
 _*.ps1
 _*.json
+tools/.chrome*/
+tools/__pycache__/
