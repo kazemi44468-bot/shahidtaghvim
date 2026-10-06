@@ -1374,9 +1374,20 @@ ul, ol { list-style: none; }
   };
 
   // ===== Helpers =====
+  // PageData رویدادها با year/month/day ذخیره می‌شوند؛
+  // fallback به jy/jm/jd برای سازگاری با رکوردهای قدیمی نگه داشته شده است.
+  function eventDate(e) {
+    return {
+      y: Number(e.year != null ? e.year : e.jy),
+      m: Number(e.month != null ? e.month : e.jm),
+      d: Number(e.day != null ? e.day : e.jd)
+    };
+  }
+
   function getEventsFor(jy, jm, jd) {
     return EVENTS.filter(e => {
-      if (e.jy !== jy || e.jm !== jm || e.jd !== jd) return false;
+      const d = eventDate(e);
+      if (d.y !== jy || d.m !== jm || d.d !== jd) return false;
       if (state.filter === 'all') return true;
       return e.type === state.filter;
     });
@@ -1384,14 +1395,35 @@ ul, ol { list-style: none; }
 
   function getEventsForMonth(jy, jm) {
     return EVENTS.filter(e => {
-      if (e.jy !== jy || e.jm !== jm) return false;
+      const d = eventDate(e);
+      if (d.y !== jy || d.m !== jm) return false;
       if (state.filter === 'all') return true;
       return e.type === state.filter;
     });
   }
 
   function typeLabel(type) {
-    return { martyrdom: 'شهادت', operation: 'عملیات', ceremony: 'یادواره', birth: 'تولد' }[type] || '';
+    return {
+      martyrdom: 'شهادت',
+      operation: 'عملیات',
+      ceremony: 'یادواره',
+      birth: 'تولد',
+      revolution: 'انقلاب',
+      event: 'واقعه',
+      war: 'جنگ'
+    }[type] || 'رویداد';
+  }
+
+  function eventCssType(type) {
+    return {
+      martyrdom: 'martyrdom',
+      operation: 'operation',
+      ceremony: 'ceremony',
+      birth: 'birth',
+      revolution: 'operation',
+      event: 'ceremony',
+      war: 'operation'
+    }[type] || 'ceremony';
   }
 
   function typeIcon(type) {
@@ -1445,7 +1477,7 @@ ul, ol { list-style: none; }
       const isHoliday = getJalaliWeekday(state.jy, state.jm, d) === 6;
 
       const eventsHtml = dayEvents.slice(0, 2).map(e => 
-        `<span class="cell-event type-${e.type}">${e.title}</span>`
+        `<span class="cell-event type-${eventCssType(e.type)}">${e.title}</span>`
       ).join('');
       const moreHtml = dayEvents.length > 2 ? `<span class="cell-more">+${toFa(dayEvents.length - 2)} مورد دیگر</span>` : '';
 
@@ -1501,7 +1533,7 @@ ul, ol { list-style: none; }
 
       const eventsHtml = dayEvents.length
         ? dayEvents.map(e => `
-            <div class="week-event type-${e.type}" data-day="${curJd}">
+            <div class="week-event type-${eventCssType(e.type)}" data-day="${curJd}">
               <strong>${e.title}</strong>
               <span>${e.desc}</span>
             </div>
@@ -1574,7 +1606,7 @@ ul, ol { list-style: none; }
 
     const eventsHtml = dayEvents.length
       ? dayEvents.map(e => `
-          <div class="day-event-card type-${e.type}">
+          <div class="day-event-card type-${eventCssType(e.type)}">
             <div class="day-event-icon">${typeIcon(e.type)}</div>
             <div class="day-event-content">
               <h4>${e.title}</h4>
