@@ -1236,6 +1236,9 @@ ul, ol { list-style: none; }
             <button class="filter-chip is-active" data-filter="all">همه</button>
             <button class="filter-chip" data-filter="martyrdom">شهادت</button>
             <button class="filter-chip" data-filter="operation">عملیات</button>
+            <button class="filter-chip" data-filter="revolution">انقلاب</button>
+            <button class="filter-chip" data-filter="event">وقایع</button>
+            <button class="filter-chip" data-filter="war">جنگ</button>
             <button class="filter-chip" data-filter="ceremony">یادواره</button>
             <button class="filter-chip" data-filter="birth">تولد</button>
           </div>
@@ -1472,7 +1475,7 @@ ul, ol { list-style: none; }
     for (let d = 1; d <= totalDays; d++) {
       const isToday = state.jy === TODAY_JY && state.jm === TODAY_JM && d === TODAY_JD;
       const isSelected = state.selectedJy === state.jy && state.selectedJm === state.jm && state.selectedJd === d;
-      const dayEvents = monthEvents.filter(e => e.jd === d);
+      const dayEvents = monthEvents.filter(e => eventDate(e).d === d);
       const [gy, gm, gd] = jalaliToGregorian(state.jy, state.jm, d);
       const isHoliday = getJalaliWeekday(state.jy, state.jm, d) === 6;
 
@@ -1577,7 +1580,7 @@ ul, ol { list-style: none; }
       }
 
       for (let d = 1; d <= totalDays; d++) {
-        const hasEvent = monthEvents.some(e => e.jd === d);
+        const hasEvent = monthEvents.some(e => eventDate(e).d === d);
         const isToday = state.jy === TODAY_JY && m === TODAY_JM && d === TODAY_JD;
         const cls = [
           'year-day',
