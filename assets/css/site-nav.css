@@ -84,7 +84,7 @@
   transition: background-color .2s var(--ease), color .2s var(--ease);
 }
 .shared-nav .nav-group-caret::after {
-  content: ";
+  content: "";
   width: 5px; height: 5px;
   border-right: 1.6px solid currentColor;
   border-bottom: 1.6px solid currentColor;
