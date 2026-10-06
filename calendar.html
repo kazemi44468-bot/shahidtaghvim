@@ -1164,10 +1164,13 @@ ul, ol { list-style: none; }
 }
 </style>
 <link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/site-data.js"></script>
+<script src="assets/js/page-data.js"></script>
+<link rel="manifest" href="manifest.json">
 </head>
 
 <body>
-<header class="shared-header"><div class="shared-container shared-header-inner"><a class="shared-brand" href="index.html"><img src="assets/images/logo.png" alt="تقویم شهدا" class="shared-logo"><span class="shared-brand-text"><strong>تقویم شهدا</strong><small>اطلس زمانی و انسانی شهدا</small></span></a><button class="shared-menu-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">☰</button><nav class="shared-nav" aria-label="منوی اصلی"><a data-page="home" href="index.html">نخست</a><a data-page="calendar" href="calendar.html">تقویم</a><a data-page="today" href="today.html">امروز</a><a data-page="martyrs" href="martyrs.html">شهدا</a><a data-page="events" href="events.html">رویدادها</a><a data-page="search" href="search.html">جست‌وجو</a><a data-page="about" href="about.html">درباره</a><a data-page="contribute" href="contribute.html">همکاری</a></nav></div></header>
+<header class="shared-header"><div class="shared-container shared-header-inner"><a class="shared-brand" href="index.html"><img src="assets/images/logo.png" alt="تقویم شهدا" class="shared-logo"><span class="shared-brand-text"><strong>تقویم شهدا</strong><small>اطلس زمانی و انسانی شهدا</small></span></a><button class="shared-menu-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">☰</button><header class="shared-header"><div class="shared-container shared-header-inner"><a class="shared-brand" href="index.html"><img src="assets/images/logo.png" alt="تقویم شهدا" class="shared-logo"><span class="shared-brand-text"><strong>تقویم شهدا</strong><small>اطلس زمانی و انسانی شهدا</small></span></a><button class="shared-menu-toggle" type="button" aria-label="باز کردن منو" aria-expanded="false">☰</button><nav class="shared-nav" aria-label="منوی اصلی"><a data-page="home" href="index.html">نخست</a><a data-page="calendar" href="calendar.html">تقویم</a><a data-page="today" href="today.html">امروز</a><a data-page="martyrs" href="martyrs.html">شهدا</a><a data-page="events" href="events.html">رویدادها</a><a data-page="places" href="places.html">مکان‌ها</a><a data-page="periods" href="periods.html">دوره‌ها</a><a data-page="sources" href="sources.html">منابع</a><a data-page="encyclopedia" href="encyclopedia.html">دانشنامه</a><a data-page="search" href="search.html">جست‌وجو</a><a data-page="about" href="about.html">درباره</a><a data-page="contribute" href="contribute.html">همکاری</a><a data-page="contact" href="contact.html">تماس</a></nav></div></header></div></header>
 
 <!-- ============================================================
      HEADER
@@ -1355,18 +1358,7 @@ ul, ol { list-style: none; }
   const [TODAY_JY, TODAY_JM, TODAY_JD] = toJalali(now.getFullYear(), now.getMonth() + 1, now.getDate());
 
   // ===== داده نمونه رویدادها =====
-  const EVENTS = [
-    { jy: TODAY_JY, jm: TODAY_JM, jd: 3, type: 'martyrdom', title: 'سالگرد شهادت شهید نمونه', desc: 'شلمچه — عملیات کربلای ۵' },
-    { jy: TODAY_JY, jm: TODAY_JM, jd: 3, type: 'ceremony', title: 'مراسم یادبود', desc: 'مسجد جامع شهر' },
-    { jy: TODAY_JY, jm: TODAY_JM, jd: 10, type: 'ceremony', title: 'یادواره شهدای استان', desc: 'مرکز استان' },
-    { jy: TODAY_JY, jm: TODAY_JM, jd: 15, type: 'operation', title: 'سالگرد عملیات نمونه', desc: 'منطقه عملیاتی غرب' },
-    { jy: TODAY_JY, jm: TODAY_JM, jd: 21, type: 'martyrdom', title: 'شهادت شهید نمونه ۲', desc: 'فتح خرمشهر' },
-    { jy: TODAY_JY, jm: TODAY_JM, jd: 21, type: 'operation', title: 'سالگرد عملیات بیت‌المقدس', desc: 'آزادسازی خرمشهر' },
-    { jy: TODAY_JY, jm: TODAY_JM, jd: 28, type: 'birth', title: 'تولد شهید نمونه ۳', desc: 'متولد ۱۳۴۸' },
-    { jy: TODAY_JY, jm: TODAY_JM === 1 ? 2 : 1, jd: 5, type: 'martyrdom', title: 'شهادت شهید نمونه ۴', desc: 'جبهه جنوب' },
-    { jy: TODAY_JY, jm: TODAY_JM === 1 ? 3 : 2, jd: 12, type: 'ceremony', title: 'یادواره کشوری', desc: 'تهران' }
-  ];
-
+  var EVENTS = window.PageData.events;
   // ===== State =====
   const state = {
     view: 'month',
@@ -1902,7 +1894,7 @@ ul, ol { list-style: none; }
 })();
 </script>
 
-<footer class="shared-footer"><div class="shared-container shared-footer-grid"><div class="shared-footer-main"><a href="index.html" class="shared-footer-brand"><img src="assets/images/logo.png" alt="تقویم شهدا"><span><strong>تقویم شهدا</strong><small>اطلس زمانی، تاریخی و انسانی شهدا و رویدادهای مرتبط؛ مرجع زمانی، تاریخی و انسانی برای ثبت، جست‌وجو و شناخت شهدا و رویدادهای مرتبط.</small></span></a></div><div class="shared-footer-links"><a href="#"></a><a href="#"></a><a href="#"></a><a href="#"></a></div><div class="shared-footer-links"><a href="#"></a><a href="#"></a><a href="#"></a><a href="#"></a></div></div></footer>
+<footer class="shared-footer"><div class="shared-container shared-footer-grid"><div class="shared-footer-main"><a href="index.html" class="shared-footer-brand"><img src="assets/images/logo.png" alt="تقویم شهدا"><span><strong>تقویم شهدا</strong><small>اطلس زمانی، تاریخی و انسانی شهدا و رویدادهای مرتبط؛ مرجع زمانی، تاریخی و انسانی برای ثبت، جست‌وجو و شناخت شهدا و رویدادهای مرتبط.</small></span></a></div><div class="shared-footer-links"><a href="index.html">نخست</a><a href="calendar.html">تقویم</a><a href="today.html">امروز</a><a href="martyrs.html">شهدا</a><a href="events.html">رویدادها</a></div><div class="shared-footer-links"><a href="places.html">مکان‌ها</a><a href="periods.html">دوره‌ها</a><a href="sources.html">منابع</a><a href="encyclopedia.html">دانشنامه</a><a href="contact.html">تماس</a></div></div></footer>
 <script src="assets/js/site.js"></script>
 </body>
 </html>
