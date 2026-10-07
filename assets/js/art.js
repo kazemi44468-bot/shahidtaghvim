@@ -33,8 +33,8 @@
       '<pattern id="p" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M20 4 L36 20 L20 36 L4 20 Z" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1.5"/></pattern></defs>' +
       '<rect width="640" height="220" fill="url(#g)"/><rect width="640" height="220" fill="url(#p)"/>' +
       '<circle cx="562" cy="26" r="92" fill="rgba(255,255,255,.05)"/><circle cx="78" cy="212" r="72" fill="rgba(0,0,0,.10)"/>' +
-      glyph +
-      '<text x="620" y="150" text-anchor="end" font-family="Vazirmatn, Tahoma, sans-serif" font-size="34" font-weight="800" fill="rgba(255,255,255,.94)" direction="rtl">' + esc(title) + '</text>' +
+      '<g transform="translate(-182,16)">' + glyph + '</g>' +
+      '<text x="620" y="150" text-anchor="end" font-family="Vazirmatn, Tahoma, sans-serif" font-size="30" font-weight="800" fill="rgba(255,255,255,.94)" direction="rtl">' + esc(title) + '</text>' +
       '<text x="620" y="188" text-anchor="end" font-family="Vazirmatn, Tahoma, sans-serif" font-size="20" fill="rgba(255,255,255,.62)" direction="rtl">' + esc(year) + '</text></svg>';
     return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
   }
@@ -47,8 +47,8 @@
       '<rect width="400" height="533" fill="url(#mg)"/><rect width="400" height="533" fill="url(#mp)"/>' +
       '<circle cx="200" cy="205" r="112" fill="rgba(255,255,255,.10)"/>' +
       '<text x="200" y="262" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="150" font-weight="800" fill="rgba(255,255,255,.9)">' + esc(initial) + '</text>' +
-      '<text x="200" y="416" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="30" font-weight="700" fill="rgba(255,255,255,.88)" direction="rtl">' + esc(m.name) + '</text>' +
-      '<text x="200" y="458" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="19" fill="rgba(255,255,255,.58)" direction="rtl">' + esc((m.role || '').slice(0, 34)) + '</text></svg>';
+      '<text x="200" y="416" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="24" font-weight="700" fill="rgba(255,255,255,.88)" direction="rtl">' + esc(m.name) + '</text>' +
+      '<text x="200" y="458" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" fill="rgba(255,255,255,.58)" direction="rtl">' + esc((m.role || '').slice(0, 34)) + '</text></svg>';
     return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
   }
   window.DSHArt = { event: eventArt, martyr: martyrArt };
