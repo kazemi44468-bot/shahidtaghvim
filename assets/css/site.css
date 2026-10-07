@@ -52,3 +52,6 @@ body{font-family:Vazirmatn,sans-serif!important}
 
 
 @media(max-width:720px){}
+/* حفظ باکس‌های لینک فوتر بدون آیتم لینک */
+.shared-footer-links{min-height:170px;display:grid;grid-template-columns:1fr 1fr;gap:8px;align-content:start}
+@media(max-width:900px){.shared-footer-links{min-height:96px}}
